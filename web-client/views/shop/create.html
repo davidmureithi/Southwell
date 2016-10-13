@@ -1,0 +1,51 @@
+<div>
+	<h1>ADD PRODUCTS</h1>
+	
+	<p>{{ message }}</p>
+	<form role="form" name="myForm">
+		<div class= "form-group" ng-class="{error: myForm.title.$invalid}">
+			<label> Name </label>
+			<div>
+			<input name="title" ng-model="product.name" type= "text" class= "form-control" placeholder="Product Name" required/>
+			<span ng-show="myForm.title.$dirty && myForm.title.$invalid" class="help-inline">Name Required</span>
+			</div>
+		</div>
+		<div class= "form-group">
+			<label> Wine Type </label>
+			<div>
+			<input name="type" ng-model="product.wine_type" type= "text" class= "form-control" placeholder="Wine Type" required/>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.author.$invalid}">
+			<label> Bottle Price </label>
+			<div>
+			<input name="author" ng-model="product.b_price" type= "text" class= "form-control" placeholder="Bottle Price" required/>
+			<span ng-show="myForm.author.$dirty && myForm.author.$invalid" class="help-inline">Bottle Price Required</span>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.publisher.$invalid}">
+			<label> Case Price </label>
+			<div>
+			<input name="publisher" ng-model="product.c_price" type= "text" class= "form-control" placeholder="Case Price" required/>
+			<span ng-show="myForm.publisher.$dirty && myForm.publisher.$invalid" class="help-inline">Case Price Required</span>
+			</div>
+		</div>
+		<div class= "form-group" ng-class="{error: myForm.year.$invalid}">
+			<label> Quantity </label>
+			<div>
+			<input name="year" ng-model="product.quantity" type= "text" class= "form-control" placeholder="Quantity" required/>
+			<span ng-show="myForm.year.$dirty && myForm.year.$invalid" class="help-inline">Quantity Required</span>
+			</div>
+		</div>
+		<div class= "form-group">
+			<label> Description </label>
+			<div>
+			<textarea name="description" ng-model="product.details" class= "form-control" placeholder= "Description"></textarea>
+			</div>
+		</div>	  
+		<a href="#/shop/index" class="btn btn-default">Cancel</a>
+		<button ng-click="createProduct(product);" 
+                ng-disabled="myForm.$invalid"
+                type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>

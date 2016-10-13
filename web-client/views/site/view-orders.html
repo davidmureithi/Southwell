@@ -1,0 +1,37 @@
+<div class="jumbotron text-center">
+	<h1>Orders Placed Via API</h1>
+	<p>{{ api }}</p>
+
+	<div>
+		<h1>Tabulated Orders Received</h1>	
+		<p>{{ message }}</p>
+		<div ng-show="orders.length > 0">
+		<table class="table table-striped table-hover">
+		<thead>
+			<th>User</th>	<th>Product</th>
+			<th>Wine Type</th>	<th>Quantity</th>
+			<th>Unit Price</th>	<th>Total Price</th>
+			<th style="width:80px;">Action&nbsp;</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="data in orders">
+				<td>{{data.user}}</td>
+				<td>{{data.product_name}}</td>
+				<td>{{data.wine_type}}</td>
+				<td>{{data.quantity}}</td>
+				<td>{{data.b_price}}</td>			
+				<td>{{data.t_price}}</td>
+				<td>
+					<a class="btn btn-primary btn-xs" href="#">
+						<i class="glyphicon glyphicon-pencil"></i>
+					</a> 
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		</div>
+		<div ng-show="books.length == 0">
+			Empty
+		</div>
+	</div>
+</div>
