@@ -13,6 +13,19 @@
 	h3{
 		color: #ccc;
 	}
+	img.bracket{
+		margin-left: -25px;
+	}
+	img.vee{
+		position: inherit;
+	    float: right;
+	    height: inherit;
+	    margin-top: -50px;
+	}
+	.tag{
+		position: absolute;
+    	margin-left: -15px;
+	}
 	.none{
 		color: #F4F3EF;
 	}
@@ -149,20 +162,20 @@
 		  	<div class="pull-right col-md-3">
 		  	  	<h2>Visit Us</h2>
 		  		<hr class="divider-top">
-		  		<p>Quality not quantity, an adage we've lived by for 30 years now.</p>
+		  		<p>Our award-wining native garden, artists residence and cellar door.</p>
 		  		<hr class="divider-top-logo" style="margin-right:;">
 		  	</div>
 
 		  	<div class="pull-right col-md-3">
 		  	  	<h2>The News</h2>
 		  		<hr class="divider-top">
-		  		<p>Quality not quantity, an adage we've lived by for 30 years now.</p>
+		  		<p>Latest happenings from the winery and our wine club in Kenya. </br></p>
 		  		<hr class="divider-top-logo">
 		  	</div>
 		  	<div class="pull-right col-md-3 active">
 		  	  	<h2>The Shop</h2>
 		  		<hr class="divider-top">
-		  		<p>Quality not quantity, an adage we've lived by for 30 years now.</p>
+		  		<p>Buy our award-wiinning wines online, read the tasting and technical notes.</p>
 		  		<hr class="divider-top-logo">
 		  	</div>
 
@@ -170,10 +183,10 @@
 	      		<div class="col-md-8 pull-left">
 		      		<p style="margin-top:-10px; margin-left:-15px;">
 		      			<img src="assets/images/United-States-Flag-icon.png" alt="user image" class="flag">
-		      			Quality not quantity, an adage we've lived by for 30 years now.
+		      			US Customers please click here to order wine online.
 		      		</p>
 		      	</div>
-		      	<div class="col-md-3 pull-right">
+		      	<div class="col-md-3 pull-right" style=" margin-right: -40px;" >
 		      	  	<h2>The Club</h2>
 		      		<hr class="divider">
 		      	</div>
@@ -192,7 +205,7 @@
       			
 			    	</br></br>
 
-		            <span >Order by</span>
+		            <span style="font-size:14px; font-weight: 600;">Order by</span>
 		            <span class="btn btn-sm btn-default">Price</span>
 		            <span class="btn btn-sm btn-default">Vintage</span>
 		        </div> 
@@ -202,15 +215,13 @@
       	<div class="flex-container col-md-8 pull-right">
   			<div class="col-md-3 pull-left" style="padding: 50px 50px 50px 50px;border-right: 1px solid #fff;">
       			<center>
-      				<h5>Delivery Info</h5>
+      				<h5 style="font-size:14px; font-weight: 600;">Delivery Info</h5>
       			</center>
       		</div>
 
-      		<div class="col-md-3 pull-left" style=" margin:0;padding: 35px 50px 50px 50px;border-right: 1px solid #fff;">
+      		<div class="col-md-3 pull-left" style=" margin:0;padding: 20px 50px 50px 50px;border-right: 1px solid #fff;">
       			<center>
-      				<h5>
-	      				<ngcart-summary></ngcart-summary>
-	      			</h5>
+      				<h5><ngcart-summary></ngcart-summary></h5>
       			</center>
       		</div>
 
@@ -252,11 +263,9 @@
   	<div class="row top-buffer">
       	<div class="col-md-4" ng-repeat="data in products">
   			<div class="col-md-3 pull-left">
-  				<img width="60" height="240" src="assets/images/wine-bottles/09riesling.png" class="attachment-shop_catalog wp-post-image" alt="">
-  				<div id="curly-brace">
-				  <div id="left" class="brace"></div>
-				  <div id="right" class="brace"></div>
-				</div>
+  				<img width="20" height="40" src="assets/images/mini-img.png" class="tag" alt="">
+  				<img width="60" height="240" src="assets/images/wine-bottles/09riesling.png" alt="">
+  				<img width="110" height="50" src="assets/images/bracket.png" class="bracket" alt="">
   			</div>
 
 			<div class="col-md-9 pull-right">
@@ -293,6 +302,7 @@
 			</div>
 			<div class="clearfix"></div>
 			<hr class="divider-items">
+			<img width="110" height="50" src="assets/images/vee.png" class="vee" alt="">
       	</div>
   	</div>  	
 
@@ -328,8 +338,11 @@
 
 <script type="text/ng-template" id="template/ngCart/summary.html">
 	<div class="row">
-	    <div class="col-md-6">{{ ngCart.getTotalItems() }}
-	        <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'bottle', 'other':'bottles'}"></ng-pluralize>
+	    <div class="col-md-12" style="font-size:50px;">
+	    	{{ ngCart.getTotalItems() }}	        
+	    </div>
+	    <div class="col-md-12">
+	        <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'Bottle', 'other':'Bottles'}" style="font-size:14px; font-weight: 800;"></ng-pluralize>
 	    </div>
 	</div>
 </script>
@@ -337,7 +350,7 @@
 <script type="text/ng-template" id="template/ngCart/total.html">
 	<div class="row">
 	    <div class="col-md-12">
-	        Total: {{ ngCart.totalCost() | currency }}
+	        Total: <span style="color:red;">{{ ngCart.totalCost() | currency }}</span>
 	    </div>
 	</div>
 </script>

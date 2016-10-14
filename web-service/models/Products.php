@@ -14,8 +14,6 @@ use Yii;
  * @property integer $c_price
  * @property integer $quantity
  * @property string $details
- *
- * @property Orders[] $orders
  */
 class Products extends \yii\db\ActiveRecord
 {
@@ -54,13 +52,5 @@ class Products extends \yii\db\ActiveRecord
             'quantity' => 'Quantity',
             'details' => 'Details',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getOrders()
-    {
-        return $this->hasMany(Orders::className(), ['product_id' => 'id']);
     }
 }

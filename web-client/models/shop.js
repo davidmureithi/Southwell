@@ -6,11 +6,11 @@ spaApp_shop.factory("services", ['$http','$location','$route',
         return $http.get(productBase + 'products');
     }	
     obj.getOrders = function(){
-        return $http.get(productBase + 'orders');
+        return $http.get(productBase + 'orderrs');
     }	
 
-	obj.createProduct = function (product) {
-		return $http.post( productBase + 'products', product )
+	obj.createProduct = function (create) {
+		return $http.post( productBase + 'products', create )
 			.then( successHandler )
 			.catch( errorHandler );
 		function successHandler( result ) {
@@ -21,13 +21,12 @@ spaApp_shop.factory("services", ['$http','$location','$route',
 			$location.path('/shop/create')
 		}
 	};
-
-	obj.createOrder = function (product) {
-		return $http.post( productBase + 'orders', product )
+	obj.createOrder = function (order) {
+		return $http.post( productBase + 'orderrs', order )
 			.then( successHandler )
 			.catch( errorHandler );
 		function successHandler( result ) {
-			$location.path('/shop/order');			
+			$location.path('/shop/index');
 		}
 		function errorHandler( result ){
 			alert("Error data")
@@ -46,33 +45,6 @@ spaApp_shop.factory("services", ['$http','$location','$route',
 			alert("Error data")
 			$location.path('/shop/create/')
 		}	
-	};	
-
-	obj.updateOrder = function (order) {
-	    return $http.put(productBase + 'orders/' + order.id, order )
-			.then( successHandler )
-			.catch( errorHandler );
-		function successHandler( result ) {
-			$location.path('/shop/index');
-		}
-		function errorHandler( result ){
-			alert("Error data")
-			$location.path('/order/update/' + order.id)
-		}	
-	};	
-
-	obj.deleteOrder = function (orderID) {
-	    return $http.delete(productBase + 'orders/' + orderID)
-			.then( successHandler )
-			.catch( errorHandler );
-		function successHandler( result ) {
-			$route.reload();
-		}
-		function errorHandler( result ){
-			alert("Error data")
-			$route.reload();
-		}	
-	};	
-	
+	};
     return obj;   
 }]);
