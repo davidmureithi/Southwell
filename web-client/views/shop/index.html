@@ -10,6 +10,15 @@
 	    padding: 0;
 	    color: darkgray;
 	}
+	h2{
+		font-weight: bold;
+    	color: darkgray;
+	}
+	h5{
+		font-weight: bold;
+    	color: darkgray;
+    	font-size:14px; font-weight: 600;
+	}
 	h3{
 		color: #ccc;
 	}
@@ -22,6 +31,59 @@
 	    height: inherit;
 	    margin-top: -50px;
 	}
+	.text-center{
+		color: gray;
+		padding: 25px;
+	}
+	.link{
+		color: gray;
+	}
+	.showme{
+		padding: 10px 20px;
+	    margin: -48px 0 0 -5px;
+	    background: #E8E9E4;
+	    font-weight: bold;
+	    color: gray;
+	    border-top-left-radius: inherit;
+	    border-top-right-radius: inherit;
+	}
+	.showall{
+		padding: 10px 20px;
+	    margin: -48px 0 0 -5px;
+	    font-weight: bold;
+	    color: gray;
+	    border-top-left-radius: inherit;
+	    border-top-right-radius: inherit;
+	}
+	.quantity{
+		color: darkgray;
+    	font-size: -webkit-xxx-large;
+	}.price{
+		color: darkgrey;
+    	font-size: initial;
+    	font-weight: 800;
+	}
+	.name-badge{
+		font-family: initial;
+    	color: lightgray;
+	}
+	.item-badge{
+	    line-height: 0;
+		font-family: initial;
+    	color: lightgray;
+    	font-size: x-large;
+	}    
+	.btn-custom{
+		font-weight: bold;
+    	color: gray;
+    	background: gainsboro;
+    	padding: 5px 20px;
+	}
+	.btn-yellow{
+		font-weight: bold;
+    	color: white;
+    	background: #F2EB25;
+	}
 	.tag{
 		position: absolute;
     	margin-left: -15px;
@@ -30,7 +92,7 @@
 		color: #F4F3EF;
 	}
 	.active{
-		color: #ccc;
+		color: lightgray;
 	}
 	.divider-items{
 	    margin-top: 60px;
@@ -46,8 +108,14 @@
 	.divider{
 		border-top:1px solid #646361; 
   	}
+  	.divider-case-bottle{
+		border-right: 1px dotted #ccc;
+    	border-width: thin;
+    	height: 80px;
+    	padding-right: 10px;
+  	}
   	.total{
-  		margin-top: 7px;
+  		border-bottom: 1px solid #fff;
     	margin-bottom: 7px;
     	width: 300%;
   	}
@@ -74,7 +142,7 @@
 	    display: flex;
 	    height: auto;*/
 	    background-color: #E8E9E4;
-	    padding: 20px 5px;
+	    padding: 0 5px;
 	    border-radius:10px;
 	}
 	.offline{
@@ -82,65 +150,6 @@
 	}
 	.flag{
 		width: 3%;
-	}
-	#curly-brace
-	{
-	    color: #ccc;
-	    width: 125px;
-	    position: absolute;
-	    left: -18%;
-	    top: 245px;
-	}
-
-	.brace
-	{
-	  border-bottom: 7px solid;
-	  margin: 0 10%;
-	  width: 30%;
-	  height: 20px;  
-	  float: left;
-	}
-
-	.brace:before,
-	.brace:after
-	{
-	  content: "";
-	  width: 10%;
-	  height: 50px;
-	  position: absolute;
-	  display: block;
-	}
-
-	#left:before
-	{  
-	  border-bottom: 7px solid;  
-	  border-bottom-left-radius: 20px;
-	  margin-left: -10%;
-	  margin-top: -30px;
-	}
-
-	#left:after
-	{
-	  border-top: 7px solid;
-	  border-top-right-radius: 20px;
-	  margin-left: 30%;
-	  margin-top: 20px;    
-	}
-
-	#right:before
-	{
-	  border-top: 7px solid;
-	  border-top-left-radius: 20px;
-	  margin-left: -10%;
-	  margin-top: 20px;
-	}
-
-	#right:after
-	{
-	  border-bottom: 7px solid;
-	  border-bottom-right-radius: 20px;
-	  margin-left: 30%;
-	  margin-top: -30px;
 	}
 </style>
 <div class="wrapper">
@@ -173,12 +182,11 @@
 		  		<hr class="divider-top-logo">
 		  	</div>
 		  	<div class="pull-right col-md-3 active">
-		  	  	<h2>The Shop</h2>
+		  	  	<h2 class="active">The Shop</h2>
 		  		<hr class="divider-top">
 		  		<p>Buy our award-wiinning wines online, read the tasting and technical notes.</p>
 		  		<hr class="divider-top-logo">
 		  	</div>
-
 		  	<div class="col-md-12">
 	      		<div class="col-md-8 pull-left">
 		      		<p style="margin-top:-10px; margin-left:-15px;">
@@ -195,52 +203,57 @@
 	  	</div>
   	</div>
 </br></br>
-  	<div class="row ">
+  	<div class="row">
       	<div class="col-md-4 pull-left">
-      		<div class="flex-container">
+      		<div class="flex-container" style="padding: 15px 5px;">
+      			<span class="showme btn btn-sm  pull-left" >Show me</span>
+      			<span class="showall btn btn-sm pull-right" >Show all</span>
+      			<div class="clearfix"></div>
       			<div class="" style="margin: 5px 20px;">
-      				<span class="btn btn-sm btn-default">White</span>
-		            <span class="btn btn-sm btn-default">Red</span>
-		            <span class="btn btn-sm btn-default">Sparkling</span>
-      			
+      				<span class="btn btn-sm btn-custom">White</span>
+		            <span class="btn btn-sm btn-custom">Red</span>
+		            <span class="btn btn-sm btn-custom">Sparkling</span>
 			    	</br></br>
-
 		            <span style="font-size:14px; font-weight: 600;">Order by</span>
-		            <span class="btn btn-sm btn-default">Price</span>
-		            <span class="btn btn-sm btn-default">Vintage</span>
+		            <span class="btn btn-sm btn-custom">Price</span>
+		            <span class="btn btn-sm btn-custom">Vintage</span>
 		        </div> 
       		</div>
       	</div>
 
       	<div class="flex-container col-md-8 pull-right">
-  			<div class="col-md-3 pull-left" style="padding: 50px 50px 50px 50px;border-right: 1px solid #fff;">
+  			<div class="col-md-3 pull-left" style="    padding: 58px 50px;
+    border-right: 1px solid #fff;
+    height: 169px;">
       			<center>
-      				<h5 style="font-size:14px; font-weight: 600;">Delivery Info</h5>
+      				<h5>Delivery Info</h5>
       			</center>
       		</div>
 
-      		<div class="col-md-3 pull-left" style=" margin:0;padding: 20px 50px 50px 50px;border-right: 1px solid #fff;">
+      		<div class="col-md-3 pull-left" style="    padding:25px;
+    border-right: 1px solid #fff;
+    height: 169px;">
       			<center>
       				<h5><ngcart-summary></ngcart-summary></h5>
       			</center>
       		</div>
 
-      		<div class="col-md-6 pull-right"  style="    padding: 15px 5px 0 10px;">
+      		<div class="col-md-6 pull-right"  style="padding: 15px 5px 0 10px;">
   				<div class="" style="padding: 10px 0;">
   					<div class="pull-left">
-	  					<center>36 x 2013 Breidscker</center>
+	  					<center><h5>36 x 2013 Breidscker</h5></center>
 	      			</div>
 	      			<div class="pull-right">
-				        <span ng-click="removeItems()" class="btn btn-default">Empty Cart</span>
+				        <span ng-click="removeItems()" class="btn btn-custom" style="color: white;">Empty Cart</span>
 	      			</div>
 	      			<div class="clearfix"></div>
       			</div>
 
       			<div class="">
 		    		<div class="pull-left">
-				        	<hr class="total" style="margin-top:0;">
-				        		<h5><ngcart-total></ngcart-total></h5>
-				        	<hr class="total">
+			        	<hr class="total" style="margin-top:0;">
+			        		<h5><ngcart-total></ngcart-total></h5>
+			        	<hr class="total" style="margin-top:10px;">
 	      			</div>
 	      			<div class="pull-right">
 				        <uib-accordion close-others="oneAtATime">
@@ -270,23 +283,23 @@
 
 			<div class="col-md-9 pull-right">
 				<h1>
-					<b class="">13</b>
-					</br>
-					{{data.name}}
+					<b class="quantity">13</b></br>
+					<span class="name-badge">{{data.name}}</span>
 				</h1>
 				<div class="top-buffer">
-					<div class="col-md-6" style="border-right: 1px solid #ccc;">
-						<div class="pull-left">
-							<span>Bottle</span>
-							</br><b>{{data.price | currency}}<b></br>
-							<input class="" type="checkbox"> QTY {{data.quantity}} </br>
-							<span class="btn btn-sm btn-default bottom-buffer" style="margin-top: 35px;">Details</span>
+					<div class="col-md-6">
+						<div class="pull-left divider-case-bottle">
+							<span class="item-badge">Bottle</span>
+							</br><b class="price">{{data.price | currency}}<b></br>
+							<ngcart-quantity>
+							</ngcart-quantity><span class="name-badge">QTY</span>
+							<span class="btn btn-sm btn-custom bottom-buffer" style="margin-top:20px;">Details</span>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="pull-right">
-							<span>Case</span>
-							</br><b>{{data.c_price | currency}} <b></br>
+							<span class="item-badge">Case</span>
+							</br><b class="price">{{data.c_price | currency}} <b></br>
 							<ngcart-addtocart id="{{ data.id }}" 
 								name="{{ data.name }}" 
 								price="{{ data.price }}" 
@@ -362,17 +375,22 @@
 	<div ng-show="attrs.id">
 	    <div>
 	        <span ng-show="quantityMax">
-	            <select style="margin-top:10px;"  name="quantity" id="quantity" ng-model="q"
-	                    ng-options=" v for v in qtyOpt"></select>
+	            <select style="margin-top:3px;"  name="quantity" id="quantity" ng-model="q"
+	                    ng-options=" v for v in qtyOpt"></select><span class="name-badge">QTY</span>
 	        </span>
-	        <a class="btn btn-sm btn-warning" style="margin-top: 28px;"
+	        <a class="btn btn-sm btn-yellow" style="margin-top: 20px;"
 	           ng-click="ngCart.addItem(id, name, price, q, data)"
 	           ng-transclude></a>
 	    </div>
 	    <mark  ng-show="inCart()">
-	        Added to Cart <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+	        In Cart <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
 	    </mark>
 	</div>
+</script>
+
+<script type="text/ng-template" id="template/ngCart/quantity.html">
+    <select style="margin-top:4px;"  name="quantity" id="quantity" ng-model="q"
+            ng-options=" v for v in qtyOpt">QTY</select>
 </script>
 
 <script type="text/ng-template" id="template/ngCart/cart.html">
@@ -464,6 +482,11 @@
 	</div>
 </script>
 
+<script type="text/ng-template" id="template/ngCart/vee.html">
+	<div ng-if="data in products / 3 == 0">
+	    <img width="110" height="50" src="assets/images/vee.png" class="vee" alt="">
+	</div>
+</script>
 
 <script type="text/ng-template" id="group-template.html">
     <div class="panel panel-default" style=" padding: 7px 9px;">

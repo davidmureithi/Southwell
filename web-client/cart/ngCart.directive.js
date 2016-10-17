@@ -49,6 +49,46 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
         };
     }])
 
+    .directive('ngcartQuantity', ['ngCart', function(ngCart){
+        return {
+            restrict : 'E',
+            controller : 'CartController',
+            scope: {
+                id:'@',
+                name:'@',
+                quantity:'@',
+                quantityMax:'@',
+                price:'@',
+                data:'='
+            },
+            transclude: true,
+            templateUrl: function(element, attrs) {
+                if ( typeof attrs.templateUrl == 'undefined' ) {
+                    return 'template/ngCart/quantity.html';
+                } else {
+                    return attrs.templateUrl;
+                }
+            },
+            link:function(scope, element, attrs){
+                scope.attrs = attrs;
+                scope.inCart = function(){
+                    return  ngCart.getItemById(attrs.id);
+                };
+
+                if (scope.inCart()){
+                    scope.q = ngCart.getItemById(attrs.id).getQuantity();
+                } else {
+                    scope.q = parseInt(scope.quantity);
+                }
+
+                scope.qtyOpt =  [];
+                for (var i = 1; i <= scope.quantityMax; i++) {
+                    scope.qtyOpt.push(i);
+                }
+            }
+        };
+    }])
+
     .directive('ngcartCart', [function(){
         return {
             restrict : 'E',

@@ -6,9 +6,9 @@ var productBase = 'http://localhost/Southwell/web-service/web/'
 var spaApp = angular.module('spaApp', [
   'ngRoute',
   'ngCart',
-  'ngAnimate',
-  'ngSanitize',
-  'ui.bootstrap',
+  // 'ngAnimate',
+  // 'ngSanitize',
+  // 'ui.bootstrap',
   'spaApp.site',
   'spaApp.shop',
 ]);

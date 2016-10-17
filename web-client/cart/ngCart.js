@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('ngCart', ['ngCart.directives'])
 
     .config([function () {
