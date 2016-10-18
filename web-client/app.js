@@ -1,14 +1,14 @@
 'use strict';
 
 // Our Yii2 rest api url
-var productBase = 'http://localhost/Southwell/web-service/web/'
+var productBase = 'http://southwell.spotpata.co.ke/web-service/web/'
 // Declare app level module which depends on views, and components
 var spaApp = angular.module('spaApp', [
   'ngRoute',
   'ngCart',
-  // 'ngAnimate',
-  // 'ngSanitize',
-  // 'ui.bootstrap',
+  'ngAnimate',
+  'ngSanitize',
+  'ui.bootstrap',
   'spaApp.site',
   'spaApp.shop',
 ]);
